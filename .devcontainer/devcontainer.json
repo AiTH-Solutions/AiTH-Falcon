@@ -1,20 +1,17 @@
 {
   "name": "AiTH Falcon",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
   "features": {
-    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
-    "ghcr.io/devcontainers/features/docker-compose:1": {}
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "dockerDashComposeVersion": "v2"
+    }
   },
-  "postCreateCommand": "echo 'Falcon ready — run: docker compose up -d'",
   "forwardPorts": [3001],
   "portsAttributes": {
     "3001": { "label": "AnythingLLM", "onAutoForward": "openBrowser" }
   },
   "customizations": {
     "vscode": {
-      "settings": {
-        "terminal.integrated.defaultProfile.linux": "bash"
-      },
       "extensions": [
         "ms-azuretools.vscode-docker"
       ]
