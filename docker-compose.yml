@@ -1,0 +1,21 @@
+version: "3.9"
+
+services:
+  anythingllm:
+    image: mintplexlabs/anythingllm:latest
+    container_name: falcon-anythingllm
+    ports:
+      - "3001:3001"
+    volumes:
+      - anythingllm-storage:/app/server/storage
+      - anythingllm-hotdir:/app/collector/hotdir
+    environment:
+      - STORAGE_DIR=/app/server/storage
+      # Model providers — configure via AnythingLLM UI on first launch
+      # Supports: OpenRouter, HuggingFace, Ollama, OpenAI, Anthropic, Cloudflare Workers AI
+      # No API keys hardcoded here — enter them in the setup wizard
+    restart: unless-stopped
+
+volumes:
+  anythingllm-storage:
+  anythingllm-hotdir:
