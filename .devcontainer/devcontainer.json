@@ -5,7 +5,7 @@
     "ghcr.io/devcontainers/features/docker-in-docker:2": {},
     "ghcr.io/devcontainers/features/docker-compose:1": {}
   },
-  "postCreateCommand": "docker compose pull && echo 'Falcon ready — run: docker compose up -d'",
+  "postCreateCommand": "echo 'Falcon ready — run: docker compose up -d'",
   "forwardPorts": [3001],
   "portsAttributes": {
     "3001": { "label": "AnythingLLM", "onAutoForward": "openBrowser" }
