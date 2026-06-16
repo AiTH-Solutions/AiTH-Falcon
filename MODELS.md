@@ -94,18 +94,26 @@ GGUF model — same approach as #1:
 
 ---
 
-### #4 — Engine Qwen (Same Model as #1, Different Context)
+### #4 — Engine Qwen (Original Heretic — Qwen 3.5)
 
 | Field | Value |
 |---|---|
-| **Agent** | Engine Qwen — Technical Operations |
-| **Model** | DavidAU/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-NEO-CODE-Di-IMatrix-MAX-GGUF |
-| **Link** | https://huggingface.co/DavidAU/Qwen3.6-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking-NEO-CODE-Di-IMatrix-MAX-GGUF |
-| **Format** | GGUF |
+| **Agent** | Engine Qwen — Technical Operations (CTFUO) |
+| **Model** | DavidAU/Qwen3.5-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking |
+| **Link** | https://huggingface.co/DavidAU/Qwen3.5-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking |
+| **Format** | Safetensors / GGUF (check repo for available formats) |
 | **Size** | ~40B parameters |
-| **Use Cases** | Compare to Athena's use, technical operations, Engine Qwen context loading |
+| **Use Cases** | Athena's original model, compare v3.5 vs v3.6, Engine Qwen context loading, technical operations |
 
-**Setup:** Same model as #1. In AnythingLLM, create a **separate Workspace** called "Engine Qwen" and load different system prompt + documents. Same model, different personality and context.
+**How to connect in AnythingLLM:**
+
+This is the ORIGINAL Heretic (Qwen 3.5) vs #1 which is the newer 3.6 version. Same connection method as #1 — via Ollama:
+
+1. **Via Ollama on Stomach Droplet:**
+   ```bash
+   ollama pull hf.co/DavidAU/Qwen3.5-40B-Claude-4.6-Opus-Deckard-Heretic-Uncensored-Thinking
+   ```
+   Then in AnythingLLM: create a separate Workspace called "Engine Qwen" with different system prompt + documents than Athena.
 
 ---
 
